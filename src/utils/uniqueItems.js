@@ -1,11 +1,11 @@
 const uniqueItems = (items, field) => {
   try {
-    if (typeof items !== "object" || !items || typeof items === "function") {
-      throw new TypeError("first parameter must be an object");
+    if (typeof items !== 'object' || !items || typeof items === 'function') {
+      throw new TypeError('first parameter must be an object');
     }
     items.forEach((elem) => {
       if (!Object.keys(elem).includes(field)) {
-        throw new Error("object keys must contain field");
+        throw new Error('object keys must contain field');
       }
     });
 
@@ -23,7 +23,6 @@ const uniqueItems = (items, field) => {
     });
     return unique;
   } catch (e) {
-    console.log(e);
     return null;
   }
 };

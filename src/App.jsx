@@ -1,19 +1,22 @@
-import "./App.css";
-import React from "react";
-import useFetch from "./utils/useFetch";
-import RegionList from "./components/regionList";
+import './App.css';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './components/home';
+import Weather from './components/weather';
 
 function App() {
-  const city = "big ben";
-  const url = `http://api.positionstack.com/v1/forward?access_key=${process.env.REACT_APP_KEY}&query=${city}`;
-  const { data, loading, error } = useFetch(url);
-  // if (loading === false && !error) {
-  //   console.log(data.data[0].label, data.data[0].name);
-  // }
-
   return (
     <div className="App">
-      {data && <RegionList items={data.data} />}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/weather/:lat/:lon" element={<Weather />} />
+          <Route
+            path="*"
+            element={<div>nothing to see here </div>}
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

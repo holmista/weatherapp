@@ -1,16 +1,21 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import RegionItem from "./regionItem";
-import uniqueItems from "../utils/uniqueItems";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import RegionItem from './regionItem';
+import uniqueItems from '../utils/uniqueItems';
 
 function RegionList({ items }) {
-  const unique = items;
+  const unique = uniqueItems(items, 'label');
   if (!unique) {
-    return <div>error</div>; // make error component
+    return <div>incorrect data format</div>; // make error component
+  }
+  if (items.length === 0) {
+    return (
+      <div>could not find that place, try another one...</div>
+    );
   }
   return (
     <div>
-      {unique.map((elem, idx) => (
+      {unique.map((elem) => (
         <RegionItem
           key={elem.label}
           latitude={elem.latitude}

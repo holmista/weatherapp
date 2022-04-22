@@ -1,5 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import useFetch from '../utils/useFetch';
 
 function RegionItem({
   latitude,
@@ -7,14 +9,16 @@ function RegionItem({
   name,
   label,
 }) {
-  console.log(latitude, longitude, name, label);
+  // const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&${process.env.REACT_APP_KEY2}`;
+  // const { data, loading, error } = useFetch(url);
   return (
-    <div>
-      {latitude}
-      {longitude}
-      {name}
-      {label}
-    </div>
+    <button type="button" onClick={() => console.log('should redirect to /lat=lat&lon=lon&label=label')}>
+      <Link to={`/weather/${latitude}/${longitude}`}>
+        {name}
+        {label}
+      </Link>
+
+    </button>
   );
 }
 RegionItem.propTypes = {
