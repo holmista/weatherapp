@@ -14,7 +14,7 @@ function RegionItem({
   return (
     <button type="button" onClick={() => console.log('should redirect to /lat=lat&lon=lon&label=label')}>
       <Link to={`/weather/${latitude}/${longitude}`}>
-        {name}
+        {`${name},`}
         {label}
       </Link>
 
