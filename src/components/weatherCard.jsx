@@ -6,7 +6,7 @@ export default function WeatherCard({
 }) {
   return (
     <div>
-      <div>
+      <div className="text-8xl">
         {`average tempreture: ${averageTemp}, minimum tempreture: ${minTemp}, maximum tempreture: ${maxTemp}
        date: ${date}, weather: ${weatherDescription}`}
 

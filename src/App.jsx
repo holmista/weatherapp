@@ -1,8 +1,9 @@
-import './App.css';
 import React from 'react';
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './components/home';
 import Weather from './components/weather';
+import './index.css';
 
 function App() {
   return (

@@ -14,7 +14,7 @@ function RegionList({ items }) {
     );
   }
   return (
-    <div>
+    <div className="flex-col w-1/5 mt-6">
       {unique.map((elem) => (
         <RegionItem
           key={elem.label}
