@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import useFetch from '../utils/useFetch';
 
 function RegionItem({
   latitude,
@@ -9,8 +8,6 @@ function RegionItem({
   name,
   label,
 }) {
-  // const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&${process.env.REACT_APP_KEY2}`;
-  // const { data, loading, error } = useFetch(url);
   return (
 
     <Link to={`/weather/${latitude}/${longitude}`} className="w-full">

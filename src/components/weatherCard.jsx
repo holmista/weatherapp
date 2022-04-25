@@ -5,11 +5,18 @@ export default function WeatherCard({
   averageTemp, minTemp, maxTemp, date, weatherDescription, icon,
 }) {
   return (
-    <div>
-      <div className="text-8xl">
-        {`average tempreture: ${averageTemp}, minimum tempreture: ${minTemp}, maximum tempreture: ${maxTemp}
-       date: ${date}, weather: ${weatherDescription}`}
-
+    <div className="text-center text-base flex flex-row flex-wrap bg-indigo-300 p-2 items-center justify-center m-2 rounded-xl sm:text-lg xs:text-left">
+      <div className="flex-col">
+        <div className="b border-b-2">{date}</div>
+        <div className="flex flex-row justify-between">
+          <div>current</div>
+          <div>{Math.round(averageTemp)}</div>
+        </div>
+        <div className="flex flex-row justify-between">
+          <div>minimum</div>
+          <div>{Math.round(minTemp)}</div>
+        </div>
+        <div>{`maximum ${Math.round(maxTemp)}`}</div>
       </div>
       <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="weather icon" />
     </div>
