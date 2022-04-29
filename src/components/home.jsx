@@ -50,14 +50,14 @@ export default function Home() {
         type="text"
         placeholder="start searching..."
         onChange={(e) => handleChange(e)}
-        className=" mt-36 p-1 text-lg  border-transparent outline-none w-1/5
-       focus:border-indigo-500  border-b-2 transition duration-300"
+        className=" mt-36 p-1 text-lg  border-transparent outline-none w-52
+       focus:border-indigo-500  border-b-2 transition duration-300 md:w-1/5"
       />
       <button
         onClick={handleClick}
         type="button"
         disabled={disable}
-        className="bg-indigo-500 mt-6 w-1/12 p-2 hover:cursor-pointer hover:bg-indigo-600
+        className="bg-indigo-500 mt-6 w-40 p-2 hover:cursor-pointer hover:bg-indigo-600
       text-white text-lg rounded-md transition duration-300"
       >
         {loading && (
