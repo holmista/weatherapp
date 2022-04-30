@@ -5,7 +5,7 @@ export default function WeatherCard({
   averageTemp, minTemp, maxTemp, date, weatherDescription, icon,
 }) {
   return (
-    <div className="text-center text-base flex flex-row flex-wrap bg-indigo-300 p-2 items-center justify-center m-2 rounded-xl sm:text-lg xs:text-left">
+    <div className="text-center text-base flex flex-row flex-wrap bg-indigo-400 p-2 items-center justify-center m-2 rounded-xl sm:text-lg xs:text-left">
       <div className="flex-col">
         <div className="b border-b-2">{date}</div>
         <div className="flex flex-row justify-between">
