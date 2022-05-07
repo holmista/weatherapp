@@ -2,17 +2,20 @@ import React, { useEffect, useState, useMemo } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './components/home';
 import Weather from './components/weather';
-import { themes, ThemeContext } from './utils/theme';
+import Context from './utils/theme';
 import './index.css';
 
 function App() {
   const [theme, setTheme] = useState('light');
+  const [measure, setMeasure] = useState('metric');
   const value = useMemo(
-    () => ({ theme, setTheme }),
-    [theme],
+    () => ({
+      theme, setTheme, measure, setMeasure,
+    }),
+    [theme, measure],
   );
   return (
-    <ThemeContext.Provider value={value}>
+    <Context.Provider value={value}>
       <div className="App">
         <BrowserRouter>
           <Routes>
@@ -25,7 +28,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </div>
-    </ThemeContext.Provider>
+    </Context.Provider>
   );
 }
 

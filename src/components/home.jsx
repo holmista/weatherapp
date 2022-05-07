@@ -3,7 +3,7 @@ import React, {
   useState, useContext, useRef, useEffect,
 } from 'react';
 import RegionList from './regionList';
-import { ThemeContext } from '../utils/theme';
+import Context from '../utils/theme';
 import ToggleTheme from './toggleTheme';
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
     inputRef.current.focus();
   });
 
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, setTheme } = useContext(Context);
 
   const handleChange = (e) => {
     if (!e.target.value) setDisble(true);
@@ -57,7 +57,6 @@ export default function Home() {
   };
   return (
     <div>
-
       <div className={`flex flex-col items-center ${theme === 'light' ? 'bg-slate-100' : 'bg-slate-600 text-white'} h-screen`}>
         <div className="w-screen flex justify-center sm:flex sm:justify-end sm:pr-48">
           <ToggleTheme theme={theme} setTheme={setTheme} />
