@@ -2,6 +2,7 @@ import React, { useEffect, useState, useMemo } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './components/home';
 import Weather from './components/weather';
+import WeatherToday from './components/weatherToday';
 import Context from './utils/theme';
 import './index.css';
 
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/weather/:lat/:lon" element={<Weather />} />
+            <Route path="/weather/:lat/:lon/today" element={<WeatherToday />} />
             <Route
               path="*"
               element={<div>nothing to see here </div>}

@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import useFetch from '../utils/useFetch';
 import WeatherCard from './weatherCard';
-import ThemeContext from '../utils/theme';
+import Context from '../utils/theme';
 import ToggleTheme from './toggleTheme';
 import ToggleMeasure from './toggleMeasure';
 
@@ -11,7 +11,7 @@ export default function Weather() {
   // const [measure, setMeasure] = useState('metric');
   const {
     theme, setTheme, measure, setMeasure,
-  } = useContext(ThemeContext);
+  } = useContext(Context);
 
   const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&units=${measure}&appid=${process.env.REACT_APP_KEY2}`;
   const { data, loading, error } = useFetch(url);
