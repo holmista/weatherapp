@@ -11,7 +11,7 @@ function RegionItem({
   return (
 
     <Link to={`/weather/${latitude}/${longitude}`} className="w-full">
-      <div className="text-lg pl-1 py-4 border-b-2 border-gray-200
+      <div className="text-lg font-medium pl-1 py-4 border-b-2 border-gray-200
                     hover:border-indigo-500 transition duration-300"
       >
         {label}
