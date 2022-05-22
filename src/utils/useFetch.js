@@ -13,12 +13,10 @@ const useFetch = (url, delay) => {
       try {
         const res = await axios.get(url, { cancelToken: source.token });
         if (res.data) setData(res.data);
-        throw Error('dunno');
       } catch (e) {
         setError(e);
       } finally {
         setLoading(false);
-        setData(null);
       }
       return () => {
         source.cancel();

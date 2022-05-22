@@ -6,11 +6,11 @@ export default function DetailDropDown({ title, data }) {
   const [drop, setDrop] = useState(false);
   const ar = Object.keys(data);
   return (
-    <div>
+    <div className="flex flex-col content-center items-center">
       <p className="flex justify-center align-middle">{title}</p>
-      {/* <DropDownButton /> */}
+      <DropDownButton onClick={() => setDrop((prev) => !prev)} />
       <div className="flex align-middle justify-start">
-        {ar.map((elem) => (
+        {drop && ar.map((elem) => (
           <div>
             {elem}
             :

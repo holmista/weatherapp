@@ -13,7 +13,7 @@ export default function WeatherCard({
         <div className="flex-col">
           <div className="b border-b-2">{date}</div>
           <div className="flex flex-row justify-between">
-            <div>current</div>
+            <div>Average</div>
             <div>{Math.round(averageTemp)}</div>
           </div>
           <div className="flex flex-row justify-between">

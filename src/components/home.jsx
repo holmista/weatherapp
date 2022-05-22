@@ -38,12 +38,9 @@ export default function Home() {
         const url = `http://api.positionstack.com/v1/forward?access_key=${process.env.REACT_APP_KEY}&query=${location}`;
         const res = await axios.get(url);
         if (res.data) setData(res.data);
-        throw Error('hi');
-        // setError(false);
+        setError(false);
       } catch (e) {
-        console.log(theme);
-        setData(false);
-        if (!e.response) { setError('error'); return; }
+        if (!e.response) { setError('An Error Occurred'); return; }
 
         switch (e.response.status) {
           case 422: setError('could not find that place, try another one...');
@@ -91,7 +88,7 @@ export default function Home() {
           {loading ? <div className={`font-medium ${theme === 'light' ? 'text-black' : 'text-white'}`}>loading</div> : <div className={`font-medium ${theme === 'light' ? 'text-black' : 'text-white'}`}>search</div>}
         </button>
         {data && <RegionList items={data.data} />}
-        {error && <ERROR theme={theme} />}
+        {error && <ERROR theme={theme} description={error} />}
       </div>
     </div>
   );

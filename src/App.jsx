@@ -4,6 +4,7 @@ import Home from './components/home';
 import Weather from './components/weather';
 import WeatherToday from './components/weatherToday';
 import Context from './utils/theme';
+import Error from './components/error';
 import './index.css';
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
   );
   return (
     <Context.Provider value={value}>
-      <div className="App">
+      <div className="bg-red-500">
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -25,7 +26,7 @@ function App() {
             <Route path="/weather/:lat/:lon/today" element={<WeatherToday />} />
             <Route
               path="*"
-              element={<div>nothing to see here </div>}
+              element={<Error description="Nothing to see here" theme="light" />}
             />
           </Routes>
         </BrowserRouter>

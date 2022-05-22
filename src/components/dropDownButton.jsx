@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function DropDownButton() {
+export default function DropDownButton({ onClick }) {
   return (
-    <button type="button">
+    <button onClick={() => onClick()} type="button">
       <svg
         version="1.1"
         id="Layer_1"
@@ -36,6 +37,12 @@ export default function DropDownButton() {
         <g />
         <g />
       </svg>
+      click me
+
     </button>
   );
 }
+
+DropDownButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
