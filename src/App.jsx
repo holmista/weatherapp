@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './components/home';
-import Weather from './components/weather';
-import WeatherToday from './components/weatherToday';
+import Home from './pages/home';
+import Weather from './pages/weather';
+import WeatherToday from './pages/weatherToday';
 import Context from './utils/theme';
-import Error from './components/error';
+import Error from './components/generic/error';
 import './index.css';
 
 function App() {

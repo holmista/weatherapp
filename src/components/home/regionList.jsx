@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import RegionItem from './regionItem';
-import uniqueItems from '../utils/uniqueItems';
+import uniqueItems from '../../utils/uniqueItems';
 
 function RegionList({ items }) {
   const unique = uniqueItems(items, 'label');

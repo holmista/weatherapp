@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import useFetch from '../utils/useFetch';
-import WeatherCard from './weatherCard';
+import WeatherCard from '../components/weather/weatherCard';
 import Context from '../utils/theme';
-import ToggleTheme from './toggleTheme';
-import ToggleMeasure from './toggleMeasure';
-import LoadingSpinner from './loadingSpinner';
-import Error from './error';
+import ToggleTheme from '../components/generic/toggleTheme';
+import ToggleMeasure from '../components/generic/toggleMeasure';
+import LoadingSpinner from '../components/generic/loadingSpinner';
+import Error from '../components/generic/error';
 
 export default function Weather() {
   const { lat, lon } = useParams();

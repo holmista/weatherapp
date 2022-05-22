@@ -2,11 +2,11 @@ import axios from 'axios';
 import React, {
   useState, useContext, useRef, useEffect,
 } from 'react';
-import RegionList from './regionList';
+import RegionList from '../components/home/regionList';
 import Context from '../utils/theme';
-import ToggleTheme from './toggleTheme';
-import LoadingSpinner from './loadingSpinner';
-import ERROR from './error';
+import ToggleTheme from '../components/generic/toggleTheme';
+import LoadingSpinner from '../components/generic/loadingSpinner';
+import ERROR from '../components/generic/error';
 
 export default function Home() {
   const [location, setLocation] = useState(null);
