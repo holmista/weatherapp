@@ -7,6 +7,7 @@ const useFetch = (url, delay) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (data) setData(null);
     const fetchData = async () => {
       setLoading(true);
       const source = axios.CancelToken.source();
@@ -23,9 +24,7 @@ const useFetch = (url, delay) => {
       };
     };
     setTimeout(() => fetchData(), delay);
-    // fetchData();
   }, [url]);
-
   return { data, loading, error };
 };
 

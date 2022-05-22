@@ -10,14 +10,13 @@ import Error from '../components/generic/error';
 
 export default function Weather() {
   const { lat, lon } = useParams();
-  // const [measure, setMeasure] = useState('metric');
   const {
     theme, setTheme, measure, setMeasure,
   } = useContext(Context);
 
   const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&units=${measure}&appid=${process.env.REACT_APP_KEY2}`;
   const { data, loading, error } = useFetch(url, 2500);
-  console.log(data);
+  console.log(data, loading, error);
   return (
     <div className={`flex flex-col items-center justify-ceneter min-h-screen  overflow-auto sm:h-screen  ${theme === 'light' ? 'bg-slate-100' : 'bg-slate-600 text-white'}`}>
       <div className="w-screen flex justify-center sm:flex sm:justify-end sm:pr-48">
@@ -27,6 +26,7 @@ export default function Weather() {
       <div className="h-full flex justify-center items-center py-16 sm:py-0">
         {error && <Error theme={theme} />}
         {loading && (<LoadingSpinner width="60" height="60" />)}
+        {data == null && loading === false && error == null && <LoadingSpinner width="60" height="60" />}
         <div className="grid grid-cols-1 xl:grid-cols-4 sm:grid-cols-2 ">
           {data && data.daily.map((elem) => (
             <WeatherCard

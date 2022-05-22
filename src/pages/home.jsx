@@ -60,6 +60,7 @@ export default function Home() {
       }
     }, 2500);
   };
+  console.log(loading);
   return (
     <div>
       <div className={`flex flex-col items-center ${theme === 'light' ? 'bg-slate-100' : 'bg-slate-600 text-white'} min-h-screen overflow-x-hidden`}>

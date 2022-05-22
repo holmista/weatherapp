@@ -6,7 +6,9 @@ export default function ToggleMeasure({ measure, setMeasure }) {
     if (measure === 'metric') return 'imperial';
     return 'metric';
   };
-
+  const handleClick = () => {
+    setMeasure(oppositeMeasure());
+  };
   return (
     <button onClick={() => setMeasure(oppositeMeasure())} type="button" className="p-1 font-medium shrink-0 mt-10 bg-indigo-400 w-40 h-14 rounded-lg">
       {`convert to ${measure === 'metric' ? 'imperial' : 'metric'}`}
