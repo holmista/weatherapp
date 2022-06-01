@@ -17,7 +17,6 @@ const useFetch = (url, delay) => {
       } catch (e) {
         setError(e);
       } finally {
-        console.log('here');
         setLoading(false);
       }
       return () => {

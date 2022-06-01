@@ -18,9 +18,10 @@ export default function Error({ theme, description, renderLink }) {
 Error.propTypes = {
   theme: PropTypes.string.isRequired,
   description: PropTypes.string,
-  renderLink: PropTypes.bool.isRequired,
+  renderLink: PropTypes.bool,
 };
 
 Error.defaultProps = {
   description: 'An Error Occurred',
+  renderLink: true,
 };

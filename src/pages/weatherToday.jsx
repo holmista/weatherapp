@@ -16,7 +16,6 @@ export default function WeatherToday() {
 
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${measure}&appid=${process.env.REACT_APP_KEY2}`;
   const { data, loading, error } = useFetch(url);
-  console.log(data);
   return (
     <div className="h-screen bg-slate-100">
       <Error theme={theme} description="This page is not yet implemented" />
