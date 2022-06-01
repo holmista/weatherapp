@@ -35,13 +35,12 @@ export default function Home() {
     setError(null);
     setTimeout(async () => {
       try {
-        const url = `http://api.positionstack.com/v1/forward?access_key=${process.env.REACT_APP_KEY || '204c80f743244d04a55f6ba57ea493e3'}&query=${location}`;
+        const url = `https://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=50&appid=87334bb1cd3b2f9617637d686cb38590`;
         const res = await axios.get(url);
         if (res.data) setData(res.data);
         setError(false);
       } catch (e) {
         if (!e.response) { setError('An Error Occurred'); return; }
-
         switch (e.response.status) {
           case 422: setError('could not find that place, try another one...');
             break;
@@ -87,7 +86,7 @@ export default function Home() {
 
           {loading ? <div className={`font-medium ${theme === 'light' ? 'text-black' : 'text-white'}`}>loading</div> : <div className={`font-medium ${theme === 'light' ? 'text-black' : 'text-white'}`}>search</div>}
         </button>
-        {data && <RegionList items={data.data} />}
+        {data && <RegionList items={data} />}
         {error && <ERROR theme={theme} description={error} />}
       </div>
     </div>
