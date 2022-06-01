@@ -17,6 +17,7 @@ const useFetch = (url, delay) => {
       } catch (e) {
         setError(e);
       } finally {
+        console.log('here');
         setLoading(false);
       }
       return () => {
@@ -25,7 +26,7 @@ const useFetch = (url, delay) => {
     };
     setTimeout(() => fetchData(), delay);
   }, [url]);
-  return { data, loading, error };
+  return { data, loading: !data && !error, error };
 };
 
 export default useFetch;
