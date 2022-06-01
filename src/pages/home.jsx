@@ -35,7 +35,7 @@ export default function Home() {
     setError(null);
     setTimeout(async () => {
       try {
-        const url = `http://api.positionstack.com/v1/forward?access_key=${process.env.REACT_APP_KEY}&query=${location}`;
+        const url = `http://api.positionstack.com/v1/forward?access_key=${process.env.REACT_APP_KEY || '204c80f743244d04a55f6ba57ea493e3'}&query=${location}`;
         const res = await axios.get(url);
         if (res.data) setData(res.data);
         setError(false);
@@ -60,7 +60,6 @@ export default function Home() {
       }
     }, 2500);
   };
-  console.log(loading);
   return (
     <div>
       <div className={`flex flex-col items-center ${theme === 'light' ? 'bg-slate-100' : 'bg-slate-600 text-white'} min-h-screen overflow-x-hidden`}>

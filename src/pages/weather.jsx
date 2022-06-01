@@ -14,9 +14,8 @@ export default function Weather() {
     theme, setTheme, measure, setMeasure,
   } = useContext(Context);
 
-  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&units=${measure}&appid=${process.env.REACT_APP_KEY2}`;
+  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&units=${measure}&appid=${process.env.REACT_APP_KEY2 || '87334bb1cd3b2f9617637d686cb38590'}`;
   const { data, loading, error } = useFetch(url, 2500);
-  console.log(data, loading, error);
   return (
     <div className={`flex flex-col items-center justify-ceneter min-h-screen  overflow-auto sm:h-screen  ${theme === 'light' ? 'bg-slate-100' : 'bg-slate-600 text-white'}`}>
       <div className="w-screen flex justify-center sm:flex sm:justify-end sm:pr-48">
